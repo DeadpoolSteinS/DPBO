@@ -11,10 +11,10 @@ class Hunian():
         return self.jml_penghuni
 
     def get_jml_kamar(self):
-        return self.jml_kamar
+        return str(self.jml_kamar)
 
     def get_dokumen(self):
-        pass
+        return "Izin Mendirikan Bangunan Hunian a/n " + self.nama_pemilik
 
     def get_summary(self):
         return "Hunian "+ self.jenis +", ditempati oleh " + str(self.jml_penghuni) + " orang."
