@@ -4,14 +4,17 @@ from indekos import Indekos
 from tkinter import *
 
 hunians = []
-hunians.append(Apartemen("Saul Goodman", 3, 3))
-hunians.append(Rumah("Gustavo Fring", 5, 2))
-hunians.append(Indekos("Chuck McGill", "Howard Hamlin"))
-hunians.append(Rumah("Mike Ehrmantraut", 1, 4))
+hunians.append(Apartemen("Saul Goodman", 3, 3, "Jakarta", 10000000))
+hunians.append(Rumah("Gustavo Fring", 5, 2, "Bandung", 5000000))
+hunians.append(Indekos("Chuck McGill", "Howard Hamlin", "Yogyakarta", 1000000))
+hunians.append(Rumah("Mike Ehrmantraut", 1, 4, "Jakarta", 8000000))
 
 root = Tk()
 root.title("Praktikum DPBO Python")
 
+
+
+# function for show detail of residen
 def details(index):
     top = Toplevel()
     top.title("Detail " + hunians[index].get_jenis())
@@ -30,6 +33,9 @@ def details(index):
 
     d_summary = Label(d_frame, text="Summary: " + hunians[index].get_summary(), anchor="w").grid(row=0, column=0, sticky="w")
 
+
+
+# function for show dokumen of residen
 def dokumen(index):
     top = Toplevel()
     top.title("Dokumen " + hunians[index].get_jenis())
@@ -48,6 +54,9 @@ def dokumen(index):
 
     d_summary = Label(d_frame, text="Dokumen: " + hunians[index].get_dokumen(), anchor="w").grid(row=0, column=0, sticky="w")
 
+
+
+# function for add indekos residen
 def addIndekos():
     top = Toplevel()
     top.title("Tambah Data Residen")
@@ -61,6 +70,9 @@ def addIndekos():
     d_occupant = Label(d_frame, text="Nama Penghuni :", width=15, font=("bold",10), anchor="w").grid(row=1, column=0, sticky="w")
     input_occupant = Entry(d_frame, width=30).grid(row=1, column=1)
 
+
+
+# function for add not indekos residen
 def addNotIndekos():
     top = Toplevel()
     top.title("Tambah Data Residen")
@@ -89,10 +101,10 @@ opts.pack(padx=10, pady=10)
 
 
 # button add and exit
-b_indekos = Button(opts, text="Add Indekos", command=lambda : addIndekos())
+b_indekos = Button(opts, text="Add Indekos", command=lambda : addIndekos(), state="disabled")
 b_indekos.grid(row=0, column=0)
 
-b_not_indekos = Button(opts, text="Add Not Indekos", command=lambda : addNotIndekos())
+b_not_indekos = Button(opts, text="Add Not Indekos", command=lambda : addNotIndekos(), state="disabled")
 b_not_indekos.grid(row=0, column=1)
 
 b_exit = Button(opts, text="Exit", command=root.quit)

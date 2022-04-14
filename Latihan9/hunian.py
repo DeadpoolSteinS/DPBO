@@ -1,8 +1,10 @@
 class Hunian():
-    def __init__(self, jenis, jml_penghuni = 1, jml_kamar = 1):
+    def __init__(self, jenis, lokasi = "", harga = 0, jml_penghuni = 1, jml_kamar = 1):
         self.jenis = jenis
         self.jml_penghuni = jml_penghuni
         self.jml_kamar = jml_kamar
+        self.lokasi = lokasi
+        self.harga = harga
 
     def get_jenis(self):
         return self.jenis
@@ -14,7 +16,10 @@ class Hunian():
         return str(self.jml_kamar)
 
     def get_dokumen(self):
-        return "Izin Mendirikan Bangunan Hunian a/n " + self.nama_pemilik
+        pass
 
     def get_summary(self):
-        return "Hunian "+ self.jenis +", ditempati oleh " + str(self.jml_penghuni) + " orang."
+        return "Hunian "+ self.jenis +", ditempati oleh " + str(self.jml_penghuni) + " orang. " + self.more()
+    
+    def more(self):
+        return "Lokasi : " + self.lokasi + ", Harga : " + str(self.harga)

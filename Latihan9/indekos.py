@@ -1,8 +1,8 @@
 from hunian import Hunian
 
 class Indekos(Hunian):
-    def __init__(self, nama_pemilik, nama_penghuni):
-        super().__init__("Indekos")
+    def __init__(self, nama_pemilik, nama_penghuni, lokasi, harga):
+        super().__init__("Indekos", lokasi, harga)
         self.nama_pemilik = nama_pemilik
         self.nama_penghuni = nama_penghuni
 
@@ -16,4 +16,4 @@ class Indekos(Hunian):
         return self.nama_penghuni
 
     def get_summary(self):
-        return "Hunian Indekos."
+        return "Hunian Indekos. " + self.more()
