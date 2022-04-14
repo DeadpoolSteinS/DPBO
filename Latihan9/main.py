@@ -3,12 +3,16 @@ from rumah import Rumah
 from indekos import Indekos
 from tkinter import *
 
+
+# first data
 hunians = []
 hunians.append(Apartemen("Saul Goodman", 3, 3, "Jakarta", 10000000))
 hunians.append(Rumah("Gustavo Fring", 5, 2, "Bandung", 5000000))
 hunians.append(Indekos("Chuck McGill", "Howard Hamlin", "Yogyakarta", 1000000))
 hunians.append(Rumah("Mike Ehrmantraut", 1, 4, "Jakarta", 8000000))
 
+
+# main frame
 root = Tk()
 root.title("Praktikum DPBO Python")
 
